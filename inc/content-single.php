@@ -66,22 +66,19 @@
         <!-- Card view popular post section -->
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title text-uppercase black-hans">Most Popular</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Top 5 popular of all time</h6>
-            <h5 class="md-line"><a href="post.html" class="text-body fjalla-One">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></h5>
-            <h5 class="md-line"><a href="post.html" class="text-body fjalla-One">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></h5>
-            <h5 class="md-line"><a href="post.html" class="text-body fjalla-One">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></h5>
-            <h5 class="md-line"><a href="post.html" class="text-body fjalla-One">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></h5>
-            <h5 class="md-line"><a href="post.html" class="text-body fjalla-One">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></h5>
+            <h5 class="card-title text-uppercase black-hans"><?php _e('Random Posts' ) ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><?php _e( 'Just random posts' ) ?></h6>
+            <?php gen_rand_posts(); ?>
           </div>
         </div>
         <br>
         <!-- Card view popular post section end -->
+        <?php get_sidebar(); ?>
         <!-- Card of newsletter section -->
         <div class="card text-center">
           <div class="card-body">
-            <h3 class="card-title black-hans">Subscribe to our Newsletter</h3>
-            <p class="card-secondary">Recieve daily quality articles directly to your mail.</p>
+            <h3 class="card-title black-hans"><?php _e('Subscribe to our Newsletter' ) ?></h3>
+            <p class="card-secondary"><?php _e('Recieve daily quality articles directly to your mail.' ) ?></p>
             <form action="">
               <div class="form-group c-f-padd col">
                 <input type="email" class="form-control" placeholder="Email Address">
