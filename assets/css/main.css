@@ -12,6 +12,10 @@ a:hover {
   color: inherit;
 }
 
+a {
+  color: inherit;
+}
+
 p.gray {
   margin-bottom: 0;
 }
@@ -233,6 +237,33 @@ p.gray {
   background-color: #000;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+#widget li {
+  list-style: none;
+}
+
+#widget ul {
+  padding-left: 0px;
+}
+
+#widget ul li {
+  list-style: none;
+}
+
+#widget ul li a {
+  font-size: 1.25rem;
+}
+
+#widget h2 {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 1.75rem;
+}
+
+.post-date {
+  display: block;
+  font-size: 0.8rem;
+  color: #aaa;
 }
 
 /* Media query starts here */
