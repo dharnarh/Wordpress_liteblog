@@ -96,3 +96,14 @@ function sm_meta_save ( $post_id ) {
 }
 
 add_action ( 'save_post', 'sm_meta_save' );
+
+# Function to add social contact to user profile
+function social_contacts ( $social ) {
+  $social['facebook'] = 'Facebook';
+  $social['instagram'] = 'Instagram';
+  $social['twitter'] = 'Twitter';
+
+  return $social;
+}
+
+add_filter ( 'user_contactmethods', 'social_contacts', 10,1 );

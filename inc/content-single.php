@@ -3,7 +3,7 @@
     <?php
       # If post have post thumbnail
       if (has_post_thumbnail()) : ?>
-      <div class="top-banner" style="background-image: url(<?php the_post_thumbnail_url(); ?>)); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-origin: initial">
+      <div class="top-banner" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-origin: initial">
     <?php endif ?>
 
     <?php 
@@ -15,7 +15,7 @@
       <div class="banner container flexbox text-center">
         <div class="mx-auto align-self-center">
           <h3 class="white text-uppercase feat-wid black-hans"><?php the_title(); ?></h3>
-          <p class="date white"><span class="fa fa-calendar-o"></span> <?php echo get_the_date(); ?> in <a href="#" class="bold white">CATEGORY</a></p>
+          <p class="date white"><span class="fa fa-calendar-o"></span> <?php echo get_the_date(); ?> in <?php the_category( ', ' ) ?></p>
         </div>
       </div>
     </div>
@@ -43,12 +43,22 @@
         <div class="card text-center">
           <div class="card-body">
             <img class="rounded-circle author-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/profilepic.png" alt="author's profile picture">
-            <h5 class="card-title bold">Author Name</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author's title, e.g blogger</h6>
-            <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, esse accusamus, corporis enim aspernatur doloremque commodi voluptates placeat voluptas laudantium rem. Repudiandae cumque soluta veritatis illum ipsa eius consequatur temporibus.</p>
-            <a href="#" class="card-link"><span class="fa fa-facebook"></span></a>
-            <a href="#" class="card-link"><span class="fa fa-instagram"></span></a>
-            <a href="#" class="card-link"><span class="fa fa-twitter"></span></a>
+            <h5 class="card-title bold black"><?php the_author_posts_link(); ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><a class="gray" href="mailto:<?php the_author_meta ( 'email' ); ?>"><?php _e('Send Mail' ) ?></a></h6>
+            <p class="card-text text-center"><?php the_author_meta ( 'description' ) ?></p>
+            
+            
+            <?php if ( get_the_author_meta( 'facebook' ) !== "" ) : ?>
+              <a href="<?php the_author_meta('facebook') ?>" class="card-link"><span class="fa fa-facebook"></span></a>
+            <?php endif; ?>
+
+            <?php if ( get_the_author_meta( 'instagram' ) !== "" ) : ?>
+              <a href="<?php the_author_meta('instagram') ?>" class="card-link"><span class="fa fa-instagram"></span></a>
+            <?php endif; ?>
+
+            <?php if ( get_the_author_meta( 'twitter' ) !== "" ) : ?>
+              <a href="<?php the_author_meta('twitter') ?>" class="card-link"><span class="fa fa-twitter"></span></a>
+            <?php endif; ?>
           </div>
         </div>
         <br>
