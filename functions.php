@@ -9,6 +9,12 @@ add_theme_support( 'title-tag' );
 # Wordpress post image thumbnail support
 add_theme_support( 'post-thumbnails' );
 
+
+# Wordpress sidebar support
+if ( function_exists( 'register_sidebar' ) ) {
+  register_sidebar();
+}
+
 # Add css styles and JS scripts
 function reg_style_n_script () {
 
@@ -107,3 +113,21 @@ function social_contacts ( $social ) {
 }
 
 add_filter ( 'user_contactmethods', 'social_contacts', 10,1 );
+
+
+# Function to generate random post
+function gen_rand_posts () {
+  $args = array (
+            'orderby' => 'rand',
+            'posts_per_page' => 5,
+          );
+  $query = new WP_Query ( $args );
+
+  while ( $query->have_posts() ) :
+    $query->the_post(); ?>
+
+    <h5 class="md-line"><a href="<?php the_permalink(); ?>" class="text-body fjalla-One"><?php the_title(); ?></a></h5>
+
+  <?php endwhile;
+  wp_reset_postdata();
+}
