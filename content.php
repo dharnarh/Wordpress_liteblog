@@ -7,6 +7,6 @@
     <h5 class="mt-0"><a href="<?php the_permalink(); ?>" class="text-body black-hans"><?php the_title(); ?></a></h5>
     <p><span class="fa fa-calendar-o"></span> <?php echo get_the_date(); ?></p>
     <p class="text-secondary"><?php the_excerpt(); ?></p>
-    <a href="<?php the_permalink(); ?>"><button class="btn btn-outline-secondary">Read post</button></a>
+    <a href="<?php the_permalink(); ?>"><button class="btn btn-outline-secondary"><?php _e( 'Read More' ) ?></button></a>
   </div>
 </div>
