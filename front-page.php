@@ -30,7 +30,7 @@
         endif;
 
         # Wordpress function to reset post data
-        wp_reset_post_data();
+        wp_reset_postdata();
         
         ?>
 
@@ -48,21 +48,6 @@
 
       <!-- Sidebar content -->
       <div class="col-12 col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
-        <!-- Card view of about author section -->
-        <div class="card text-center">
-          <div class="card-body">
-            <img class="rounded-circle author-img" src="assets/img/profilepic.png" alt="author's profile picture">
-            <h5 class="card-title bold">Author Name</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author's title, e.g blogger</h6>
-            <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, esse accusamus, corporis enim aspernatur doloremque commodi voluptates placeat voluptas laudantium rem. Repudiandae cumque soluta veritatis illum ipsa eius consequatur temporibus.</p>
-            <a href="#" class="card-link"><span class="fa fa-facebook"></span></a>
-            <a href="#" class="card-link"><span class="fa fa-instagram"></span></a>
-            <a href="#" class="card-link"><span class="fa fa-twitter"></span></a>
-          </div>
-        </div>
-        <br>
-        <!-- Card view of about author section end -->
-
         <!-- Card of newsletter section -->
         <div class="card text-center">
           <div class="card-body">
