@@ -12,26 +12,26 @@
         
         <?php
         # Argumment that defines how many posts is looped
-        $args = array(
-          'posts_per_page' => 10,
-          'paged' => 1
-        );
+        $args = array (
+                  'posts_per_page' => 10,
+                  'paged' => 1
+                );
 
         # Variable assigned to WP_Query class
-        $query = new WP_Query($args);
+        $query = new WP_Query ( $args );
 
-        if ($query->have_posts()) :
-          while ($query->have_posts()) :
-          $query->the_post();
+        if ( $query->have_posts() ) :
+          while ( $query->have_posts() ) :
+            $query->the_post();
 
-        get_template_part('content', get_post_format());
+            get_template_part ( 'content', get_post_format() );
 
-        endwhile;
+          endwhile;
         endif;
 
         # Wordpress function to reset post data
         wp_reset_postdata();
-
+        
         ?>
 
         <br>
