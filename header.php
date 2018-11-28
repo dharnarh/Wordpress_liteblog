@@ -15,7 +15,15 @@
   <!-- Header and Navbar section -->
   <div class="container-fluid border-bottom c-f-padd">
     <div class="headerbar text-center">
-      <h1 class="mg-btm-o"><a href="<?php echo get_bloginfo( 'wpurl' ) ?>" class="navbar-brand align-middle oleo-script black big">TrendingReportGh</a></h1>
+      <h1 class="mg-btm-o">
+        <a href="<?php echo get_bloginfo( 'wpurl' ) ?>" class="navbar-brand align-middle oleo-script black big">
+        <?php if ( has_custom_logo() ) :
+            the_custom_logo();
+          else :
+            bloginfo('name');
+        endif; ?>
+      </a>
+      </h1>
     </div>
   </div>
 

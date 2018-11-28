@@ -9,7 +9,12 @@ add_theme_support( 'title-tag' );
 # Wordpress post image thumbnail support
 add_theme_support( 'post-thumbnails' );
 
-
+# Wordpress support for custom logo
+add_theme_support( 'custom-logo', array(
+  'width' => 250,
+  'height' => 100,
+  'flex-width' => true,
+) );
 # Wordpress sidebar support
 if ( function_exists( 'register_sidebar' ) ) {
   register_sidebar();

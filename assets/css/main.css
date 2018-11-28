@@ -266,6 +266,10 @@ p.gray {
   color: #aaa;
 }
 
+.custom-logo-link img {
+  margin: 15px 0px;
+}
+
 /* Media query starts here */
 
 @media (min-width: 1200px) {
