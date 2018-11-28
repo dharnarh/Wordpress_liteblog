@@ -7,7 +7,7 @@ add_theme_support( 'html5' );
 add_theme_support( 'title-tag' );
 
 # Wordpress post image thumbnail support
-add_theme_support( 'post_thumbnail' );
+add_theme_support( 'post-thumbnails' );
 
 # Add css styles and JS scripts
 function reg_style_n_script () {
