@@ -4,12 +4,14 @@
       # If post have post thumbnail
       if (has_post_thumbnail()) : ?>
       <div class="top-banner" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-origin: initial">
+      <div style="height: 100%; background-color: rgba(0,0,0,0.5); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-origin: initial">
     <?php endif ?>
 
     <?php 
       # If post doesn't have post_thumbnail
       if (!has_post_thumbnail()) : ?>
       <div class="top-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/blog.jpg); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-origin: initial">
+      <div style="height: 100%; background-color: rgba(0,0,0,0.5); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-origin: initial">
     <?php endif ?>
 
       <div class="banner container flexbox text-center">
@@ -18,6 +20,7 @@
           <p class="date white"><span class="fa fa-calendar-o"></span> <?php echo get_the_date(); ?> in <?php the_category( ', ' ) ?></p>
         </div>
       </div>
+    </div>
     </div>
   </div>
   <!-- Single Carousel feature post section end -->
