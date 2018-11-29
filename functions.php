@@ -139,3 +139,31 @@ function gen_rand_posts () {
   <?php endwhile;
   wp_reset_postdata();
 }
+
+# Function to get live search via Ajax call
+function ajax_fetch () {
+  $args = array (
+            'posts_per_page' => -1,
+            's' => esc_attr( $_POST['keywod'] ),
+            'post_type' => 'post', 'data'
+          );
+  $query = new WP_Query ( $args );
+
+  if ( $query->have_posts() ) :
+    while ( $query->have_posts() ) :
+      $query->the_post(); ?>
+
+      <h5 class="md-line">
+        <a href="<?php echo esc_url( the_permalink() ); ?>" class="text-body bold"><?php the_title(); ?></a>
+        <br><small><span class="fa fa-calendar-o"></span> <?php echo get_the_date(); ?></small>
+      </h5>
+
+    <?php endwhile;
+  endif;
+
+  wp_reset_postdata();
+  die();
+}
+
+add_action ( 'wp_ajax_ajax_fetch', 'ajax_fetch' );
+add_action ( 'wp_ajax_nopriv_ajax_fetch', 'ajax_fetch' );

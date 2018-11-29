@@ -64,7 +64,7 @@
     </div>
     <div class="searchForm">
       <form>
-        <input type="text" placeholder="Search Article .." class="form-control searchInput">
+        <input type="text" autofocus name="keyword" placeholder="Search Article .." class="form-control searchInput">
       </form>
     </div>
     <div class="searchResult"></div>
