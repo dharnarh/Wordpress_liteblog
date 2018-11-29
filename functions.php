@@ -9,6 +9,8 @@ add_theme_support( 'title-tag' );
 # Wordpress post image thumbnail support
 add_theme_support( 'post-thumbnails' );
 
+add_image_size( 'liteblog-featured-image', 2000, 1200, true );
+
 # Wordpress support for custom logo
 add_theme_support( 'custom-logo', array(
   'width' => 250,
@@ -38,7 +40,8 @@ add_action ( 'wp_enqueue_scripts', 'reg_style_n_script' );
 # Function to register menu to theme
 function reg_my_menu () {
   register_nav_menus (
-    array ( 'header-menu' => __( 'Header Menu' ) )
+    array ( 'header-menu' => __( 'Header Menu' ),
+            'footer-menu' => __( 'Footer Menu' ) )
   );
 }
 
@@ -54,7 +57,7 @@ add_filter ( 'nav_menu_css_class', 'li_class', 1,3 );
 
 # Add classes to wp_menu li a
 function li_a_class ( $class ) {
-	$class['class'] = 'nav-link';
+	$class['class'] = 'nav-link text-uppercase';
 	return $class;
 }
 add_filter ( 'nav_menu_link_attributes', 'li_a_class' );
