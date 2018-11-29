@@ -251,13 +251,23 @@ p.gray {
   list-style: none;
 }
 
+#widget .widget {
+  border-bottom: 1px #aaa solid;
+}
+
+#widget .widget:last-child {
+  border-bottom: 0px;
+}
+
 #widget ul li a {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 #widget h2 {
   font-family: 'Black Han Sans', sans-serif;
   font-size: 1.75rem;
+  font-variant: all-small-caps;
 }
 
 .post-date {
