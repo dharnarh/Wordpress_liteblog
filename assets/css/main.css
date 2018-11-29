@@ -144,6 +144,10 @@ p.gray {
   text-align: center;
 }
 
+.footer-nav li {
+  color: #fff;
+}
+
 .footer-nav {
   margin-top: 10px;
 }
