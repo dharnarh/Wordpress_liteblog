@@ -147,7 +147,7 @@ function gen_rand_posts () {
 function ajax_fetch () {
   $args = array (
             'posts_per_page' => -1,
-            's' => esc_attr( $_POST['keywod'] ),
+            's' => esc_attr( $_POST['keyword'] ),
             'post_type' => 'post', 'data'
           );
   $query = new WP_Query ( $args );
