@@ -11,6 +11,9 @@ add_theme_support( 'post-thumbnails' );
 
 add_image_size( 'liteblog-featured-image', 2000, 1200, true );
 
+# Wordpress theme support for selective refresh for widgets
+add_theme_support( 'customize-selective-refresh-widgets' );
+
 # Wordpress support for custom logo
 add_theme_support( 'custom-logo', array(
   'width' => 250,
@@ -176,3 +179,6 @@ function default_gravatar ( $avatar ) {
 }
 
 add_filter ( 'avatar_defaults', 'default_gravatar' );
+
+# Require customizer.php
+require get_parent_theme_file_path( '/admin/customizer.php' );
