@@ -45,7 +45,7 @@
         <!-- Card view of about author section -->
         <div class="card text-center">
           <div class="card-body">
-            <img class="rounded-circle author-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/profilepic.png" alt="author's profile picture">
+            <img class="rounded-circle author-img" src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" alt="author's profile picture">
             <h5 class="card-title bold black"><?php the_author_posts_link(); ?></h5>
             <h6 class="card-subtitle mb-2 text-muted"><a class="gray" href="mailto:<?php the_author_meta ( 'email' ); ?>"><?php _e('Send Mail' ) ?></a></h6>
             <p class="card-text text-center"><?php the_author_meta ( 'description' ) ?></p>

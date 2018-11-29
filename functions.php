@@ -167,3 +167,12 @@ function ajax_fetch () {
 
 add_action ( 'wp_ajax_ajax_fetch', 'ajax_fetch' );
 add_action ( 'wp_ajax_nopriv_ajax_fetch', 'ajax_fetch' );
+
+# Function to add custom default gravatar profile picture
+function default_gravatar ( $avatar ) {
+  $pic_location = get_parent_theme_file_path('/assets/img/profilepic.png' );
+  $avatar[$pic_location] = "Default Gravatar";
+  return $avatar;
+}
+
+add_filter ( 'avatar_defaults', 'default_gravatar' );
