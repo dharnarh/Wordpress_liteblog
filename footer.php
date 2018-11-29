@@ -14,24 +14,16 @@
 
       <div class="footer-nav">
         <ul class="nav justify-content-center fjalla-One">
-          <li class="nav-item">
-            <a href="#" class="nav-link white text-uppercase">category</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link white text-uppercase">category</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link white text-uppercase">category</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link white text-uppercase">category</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link white text-uppercase">category</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link white text-uppercase">category</a>
-          </li>
+          <?php
+            wp_nav_menu (
+              array (
+                'theme_location' => 'footer-menu',
+                'container' => false,
+                'items_wrap' => '%3$s',
+                'fallback_cb' => false,
+              )
+            )
+          ?>
         </ul>
       </div>
     </div>
