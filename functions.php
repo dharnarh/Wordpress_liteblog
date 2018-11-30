@@ -205,5 +205,16 @@ function default_gravatar ( $avatar ) {
 
 add_filter ( 'avatar_defaults', 'default_gravatar' );
 
+# Function for custom excerpt length and custom excerpt read more [..]
+function custom_excerpt_length ( $length ) {
+  return 50;
+}
+
+function custom_excerpt_more ( $more ) {
+  return '...';
+}
+
+add_filter ( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter ( 'excerpt_more', 'custom_excerpt_more' ); 
 # Require customizer.php
 require get_parent_theme_file_path( '/admin/customizer.php' );
