@@ -8,7 +8,7 @@
     <!-- Row start -->
     <div class="row">
       <!-- Main blog content -->
-      <div class="col-12 col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-8">
+      <div class="col-12 col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 ajaxPost">
         
         <?php
         # Argumment that defines how many posts is looped
@@ -34,7 +34,7 @@
         
         ?>
 
-        <br>
+        <br class="br">
 
         <!-- Load More Articles -->
         <div class="loadp text-center">

@@ -171,6 +171,31 @@ function ajax_fetch () {
 add_action ( 'wp_ajax_ajax_fetch', 'ajax_fetch' );
 add_action ( 'wp_ajax_nopriv_ajax_fetch', 'ajax_fetch' );
 
+# Function to load more post on ajax call
+function load_posts_by_ajax () {
+  $paged = $_POST['page'];
+  $args = array (
+            'posts_per_page' => 5,
+            'paged' => $paged
+          );
+  $query = new WP_Query ( $args );
+
+  if ( $query->have_posts() ) :
+    while ( $query->have_posts() ) :
+      $query->the_post();
+
+      get_template_part( 'content', get_post_format() );
+
+    endwhile;
+  endif;
+
+  wp_reset_postdata();
+  wp_die();
+}
+
+add_action ( 'wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax' );
+add_action ( 'wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax' );
+
 # Function to add custom default gravatar profile picture
 function default_gravatar ( $avatar ) {
   $pic_location = get_parent_theme_file_path('/assets/img/profilepic.png' );

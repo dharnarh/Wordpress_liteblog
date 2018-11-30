@@ -11,6 +11,39 @@ jQuery(function ($) {
   });
 
   var ajaxurl = "../../wp-admin/admin-ajax.php";
+  var page = 2;
+
+  // Function to load more post via ajax
+  $("body").on('click', '.loadMore', function() {
+    var data = {
+      'action': 'load_posts_by_ajax',
+      'page': page,
+    };
+
+    $.post({
+      url: ajaxurl,
+      data: data,
+      type: 'POST',
+
+      beforeSend: function() {
+        $("#loading").removeClass("fa-long-arrow-down").addClass("fa-spin fa-spinner");
+      },
+
+      success: function(res) {
+        if (res != "") {
+          $("#loading").removeClass("fa-spin fa-spinner").addClass("fa-long-arrow-down");
+          $(".br").before(res);
+          page++;
+          console.log(page);
+        } else {
+          $(".loadMore").hide();
+          $(".br").after(
+            "<h3 class='text-center black-hans'>You have reached the end of posts!</h3>"
+          );
+        }
+      }
+    });
+  });
   
   // Function to call ajax_fetch()
   $(".searchInput").keyup(function () {
