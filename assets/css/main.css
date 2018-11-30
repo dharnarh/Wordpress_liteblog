@@ -131,6 +131,21 @@ p.gray {
   margin-top: 0px;
 }
 
+.rnd-line {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.rnd-line:nth-last-child(-n+1) {
+  margin-bottom: 10px;
+  border-bottom: 0px;
+}
+
+.rnd-line:first-child {
+  margin-top: 0px;
+}
+
 .post-image {
   height: 350px;
   margin-bottom: 20px;
@@ -256,6 +271,7 @@ p.gray {
 }
 
 #widget .widget {
+  margin-bottom: 10px;
   border-bottom: 1px #aaa solid;
 }
 
@@ -266,12 +282,12 @@ p.gray {
 #widget ul li a {
   font-size: 1rem;
   font-family: 'Fjalla One', sans-serif;
+  color: #6c757d !important;
 }
 
 #widget h2 {
   font-family: 'Black Han Sans', sans-serif;
   font-size: 1.75rem;
-  font-variant: all-small-caps;
 }
 
 .post-date {

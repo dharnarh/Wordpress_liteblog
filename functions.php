@@ -137,7 +137,7 @@ function gen_rand_posts () {
   while ( $query->have_posts() ) :
     $query->the_post(); ?>
 
-    <h5 class="md-line"><a href="<?php the_permalink(); ?>" class="text-body fjalla-One"><?php the_title(); ?></a></h5>
+    <h5 class="rnd-line"><a href="<?php the_permalink(); ?>" class="text-muted fjalla-One"><?php the_title(); ?></a></h5>
 
   <?php endwhile;
   wp_reset_postdata();
