@@ -21,6 +21,8 @@
             get_template_part( 'content', get_post_format() );
 
           endwhile;
+          else :
+            _e( "<h3 class='text-center black-hans'>Content not available at this moment.</h3>" );
         endif;
 
         # Wordpress function to reset post data

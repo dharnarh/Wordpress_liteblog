@@ -162,6 +162,8 @@ function ajax_fetch () {
       </h5>
 
     <?php endwhile;
+    else :
+      _e( "<h3 class='text-center black-hans'>Seems the content you're searching for isn't available.</h3>" );
   endif;
 
   wp_reset_postdata();
