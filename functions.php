@@ -28,13 +28,13 @@ if ( function_exists( 'register_sidebar' ) ) {
 # Add css styles and JS scripts
 function reg_style_n_script () {
 
-  wp_enqueue_style( 'bootstrapCSS', get_template_directory_uri() . '/assets/css/bootstrap.css' );
+  wp_enqueue_style( 'bootstrapCSS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
   wp_enqueue_style( 'fontAwesomeCSS', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
-  wp_enqueue_style( 'mainCSS', get_template_directory_uri() . '/assets/css/main.css' );
+  wp_enqueue_style( 'mainCSS', get_template_directory_uri() . '/assets/css/main.min.css' );
   wp_enqueue_style( 'styleCSS', get_template_directory_uri() . '/style.css' );
-  wp_enqueue_script( 'JqueryJS', get_template_directory_uri() . '/assets/js/jquery-3.3.1.js' );
-	wp_enqueue_script( 'bootstrapJS', get_template_directory_uri() . '/assets/js/bootstrap.js' );
-	wp_enqueue_script( 'mainJS', get_template_directory_uri() . '/assets/js/main.js' );
+  wp_enqueue_script( 'JqueryJS', 'https://code.jquery.com/jquery-3.3.1.min.js' );
+	wp_enqueue_script( 'bootstrapJS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' );
+	wp_enqueue_script( 'mainJS', get_template_directory_uri() . '/assets/js/main.min.js' );
 
 }
 
