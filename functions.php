@@ -252,3 +252,100 @@ function custom_pagination () {
     _e( "<br><h3 class='text-center black-hans'>You have reached the end of posts!</h3>" );
   endif;
 }
+
+# Function to add fontawesome Icons with link to footer
+function theme_icon_page () { ?>
+  <div class="sm-row-content">
+    <div class="wrap">
+      <h2>Theme Icon Settings</h2>
+      <p>Input url for each icon label in the input box.</p>
+      <form action="options.php" method="post">
+      <?php
+        settings_fields( 'section' );
+        do_settings_sections( 'theme-icons' );
+        submit_button();
+      ?>
+      </form>
+    </div>
+  </div>
+<?php
+}
+
+# Facebook input box
+function setting_facebook() { ?>
+  <input type="text" name="facebook" id="facebook" value="<?php echo get_option( 'facebook' ); ?>" />
+<?php }
+
+# Instagram input box
+function setting_instagram () { ?>
+  <input type="text" name="instagram" id="instagram" value="<?php echo get_option( 'instagram' ); ?>" />
+<?php }
+
+# Twitter input box
+function setting_twitter() { ?>
+  <input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
+<?php }
+
+# LinkedIn input box
+function setting_linkedin() { ?>
+  <input type="text" name="linkedin" id="linkedin" value="<?php echo get_option( 'linkedin' ); ?>" />
+<?php }
+
+# Email Address input box
+function setting_email() { ?>
+  <input type="email" name="email" id="email" value="<?php echo get_option( 'email' ); ?>" />
+<?php }
+
+# Function to add settings_field()
+function theme_icon_setup () {
+  add_settings_section ( 'section', 'Icon Settings', null, 'theme-icons' );
+  add_settings_field ( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-icons', 'section' );
+  add_settings_field ( 'facebook', 'Facebook Page URL', 'setting_facebook', 'theme-icons', 'section' );
+  add_settings_field ( 'linkedin', 'LinkedIn URL', 'setting_linkedin', 'theme-icons', 'section' );
+  add_settings_field ( 'instagram', 'Instagram URL', 'setting_instagram', 'theme-icons', 'section' );
+  add_settings_field ( 'email', 'Email Address', 'setting_email', 'theme-icons', 'section' );
+
+  register_setting  ( 'section', 'twitter' );
+  register_setting  ( 'section', 'facebook' );
+  register_setting  ( 'section', 'linkedin' );
+  register_setting  ( 'section', 'instagram' );
+  register_setting  ( 'section', 'email' );
+}
+
+add_action ( 'admin_init', 'theme_icon_setup' );
+
+# Function to add custom settings
+function theme_icons_add_menu () {
+  add_menu_page ( 'Footer Icons', 'Footer Icons', 'manage_options', 'theme-icons', 'theme_icon_page', null, 99 );
+}
+
+add_action ( 'admin_menu', 'theme_icons_add_menu' );
+
+# function to show footer icons
+function custom_theme_icon () { ?>
+  <div class="footer-social">
+  <?php
+    if (!empty( get_option('twitter') )) : ?>
+    <a href="<?php echo get_option( 'twitter' ); ?>"><span class="gh fa fa-twitter"></span></a>
+  <?php endif;
+    if (!empty( get_option('facebook') )) : ?>
+    <a href="<?php echo get_option( 'facebook' ); ?>"><span class="gh fa fa-facebook"></span></a>
+  <?php endif;
+    if (!empty( get_option('instagram') )) : ?>
+    <a href="<?php echo get_option( 'instagram' ); ?>"><span class="gh fa fa-instagram"></span></a>
+  <?php endif;
+    if (!empty( get_option('linkedin') )) : ?>
+    <a href="<?php echo get_option( 'linkedin' ); ?>"><span class="gh fa fa-linkedin"></span></a>
+  <?php endif;
+    if (!empty( get_option('email') )) : ?>
+    <a href="mailto:<?php echo get_option( 'email' ); ?>"><span class="gh fa fa-envelope"></span></a>
+  <?php endif;
+  ?>
+  </div>
+  <?php
+}
+
+# Function to echo site build
+function custom_meta_attr () { ?>
+  <a href="https://umarfarouq.website" class="white bold">UMAR FAROUQ</a>
+<?php }
