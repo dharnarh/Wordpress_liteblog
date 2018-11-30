@@ -218,5 +218,37 @@ function custom_excerpt_more ( $more ) {
 
 add_filter ( 'excerpt_length', 'custom_excerpt_length', 999 );
 add_filter ( 'excerpt_more', 'custom_excerpt_more' ); 
+
 # Require customizer.php
 require get_parent_theme_file_path( '/admin/customizer.php' );
+
+# Function to add bootstrap page-link class to custom_pagination link
+function pagination_attr () {
+  return "class='page-link black'";
+}
+
+add_filter ( 'next_posts_link_attributes', 'pagination_attr' );
+add_filter ( 'previous_posts_link_attributes', 'pagination_attr' );
+
+# Pagination for category and author post page
+function custom_pagination () {
+  if ( get_next_posts_link() || get_previous_posts_link() ) : ?>
+    <br>
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <?php if ( get_previous_posts_link() ) : ?>
+        <li class="page-item">
+          <?php previous_posts_link ( 'Previous Posts' ) ?>
+        </li>
+        <?php endif ?>
+        <?php if ( get_next_posts_link() ) : ?>
+        <li class="page-item">
+          <?php next_posts_link ( 'Older Posts' ) ?>
+        </li>
+        <?php endif ?>
+      </ul>
+    </nav>
+<?php else :
+    _e( "<br><h3 class='text-center black-hans'>You have reached the end of posts!</h3>" );
+  endif;
+}

@@ -21,6 +21,7 @@
             get_template_part( 'content', get_post_format() );
 
           endwhile;
+            custom_pagination();
           else :
             _e( "<h3 class='text-center black-hans'>Content not available at this moment.</h3>" );
         endif;
