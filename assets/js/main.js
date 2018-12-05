@@ -10,7 +10,7 @@ jQuery(function ($) {
     $("body").removeClass("overflow-hidden");
   });
 
-  var ajaxurl = "../../wp-admin/admin-ajax.php";
+  var ajaxurl = "../../../wp-admin/admin-ajax.php";
   var page = 2;
 
   // Function to load more post via ajax
